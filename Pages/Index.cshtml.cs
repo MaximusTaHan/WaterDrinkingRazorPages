@@ -19,6 +19,7 @@ namespace WaterDrinkingLogger.Pages
         public void OnGet()
         {
             Records = GetAllRecords();
+            ViewData["Total"] = Records.AsEnumerable().Sum(x => x.Quantity);
         }
 
         private List<DrinkingWaterModel> GetAllRecords()
